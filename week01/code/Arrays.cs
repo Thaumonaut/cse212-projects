@@ -1,3 +1,5 @@
+using System.Threading.Tasks.Dataflow;
+
 public static class Arrays
 {
     /// <summary>
@@ -13,7 +15,20 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        /* 
+            Write a function that takes the index of a loop starting at 1 and multiples that value
+            by the input number. The result will be stored in a new array that is returned from
+            the function.
+         */
+
+        var results = new double[length];
+
+        for (int i = 1; i <= length; i++)
+        {
+            results[i - 1] = number * i;
+        }
+
+        return results; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +44,13 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        /* 
+            Create a copy of the start of the list then remove those values from the list and place at the end of the list.
+         */
+        
+        var startSlice = data.GetRange(0, data.Count - amount);
+        data.RemoveRange(0, data.Count - amount);
+        data.AddRange(startSlice);
     }
 }
