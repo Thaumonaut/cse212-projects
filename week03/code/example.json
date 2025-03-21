@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": 1742530133000,
+    "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+    "title": "USGS All Earthquakes, Past Day",
+    "status": 200,
+    "api": "1.14.1",
+    "count": 329
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 0.75,
+        "place": "28 km SSW of Ocotillo Wells, CA",
+        "time": 1742529027740,
+        "updated": 1742529282107,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci40905807",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci40905807.geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "automatic",
+        "tsunami": 0,
+        "sig": 9,
+        "net": "ci",
+        "code": "40905807",
+        "ids": ",ci40905807,",
+        "sources": ",ci,",
+        "types": ",nearby-cities,origin,phase-data,scitech-link,",
+        "nst": 29,
+        "dmin": 0.06706,
+        "rms": 0.17,
+        "gap": 62,
+        "magType": "ml",
+        "type": "earthquake",
+        "title": "M 0.8 - 28 km SSW of Ocotillo Wells, CA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.242,
+          32.9116667,
+          7.65
+        ]
+      },
+      "id": "ci40905807"
+    }
+  ]
+}
