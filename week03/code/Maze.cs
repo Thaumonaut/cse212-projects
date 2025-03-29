@@ -32,7 +32,11 @@ public class Maze
     /// </summary>
     public void MoveLeft()
     {
-        // FILL IN CODE
+        if(!canMoveDirection(Direction.left)) 
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+        _currX--;
     }
 
     /// <summary>
@@ -41,7 +45,11 @@ public class Maze
     /// </summary>
     public void MoveRight()
     {
-        // FILL IN CODE
+        if(!canMoveDirection(Direction.right)) 
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+        _currX++;
     }
 
     /// <summary>
@@ -50,7 +58,11 @@ public class Maze
     /// </summary>
     public void MoveUp()
     {
-        // FILL IN CODE
+        if(!canMoveDirection(Direction.up)) 
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+        _currY--;
     }
 
     /// <summary>
@@ -59,11 +71,26 @@ public class Maze
     /// </summary>
     public void MoveDown()
     {
-        // FILL IN CODE
+        if(!canMoveDirection(Direction.down)) 
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+
+        _currY++;
     }
 
     public string GetStatus()
     {
         return $"Current location (x={_currX}, y={_currY})";
+    }
+
+    private enum Direction
+    {
+        left, right, up, down
+    }
+
+    private bool canMoveDirection(Direction direction) {
+        int dir = (int)direction;
+        return _mazeMap[(_currX, _currY)][dir];
     }
 }
