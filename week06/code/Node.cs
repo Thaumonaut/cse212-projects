@@ -12,6 +12,10 @@ public class Node
     public void Insert(int value)
     {
         // TODO Start Problem 1
+        if(value == Data)
+        {
+            return;
+        }
 
         if (value < Data)
         {
@@ -34,12 +38,19 @@ public class Node
     public bool Contains(int value)
     {
         // TODO Start Problem 2
+        if (value == Data)
+            return true;
+        else if (value < Data)
+            return Left?.Contains(value) ?? false;
+        else if (value > Data)
+            return Right?.Contains(value) ?? false;
         return false;
     }
 
     public int GetHeight()
     {
-        // TODO Start Problem 4
-        return 0; // Replace this line with the correct return statement(s)
+        if(this is null) return 0;
+        // add 1 for the current node and the max of the left and right subtrees
+        return 1 + Math.Max(Left?.GetHeight() ?? 0, Right?.GetHeight() ?? 0);
     }
 }
